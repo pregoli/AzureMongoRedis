@@ -1,0 +1,9 @@
+#:D:\Projects\MongoRedis\src\MongoRedis\MongoRedis.xproj
+D:\Projects\MongoRedis\src\MongoRedis\MongoRedis.xproj|D:\Projects\MongoRedis\src\MongoRedis.Entities\MongoRedis.Entities.xproj
+D:\Projects\MongoRedis\src\MongoRedis\MongoRedis.xproj|D:\Projects\MongoRedis\src\MongoRedis.Repository\MongoRedis.Repository.xproj
+D:\Projects\MongoRedis\src\MongoRedis\MongoRedis.xproj|D:\Projects\MongoRedis\src\MongoRedis.Services\MongoRedis.Services.xproj
+D:\Projects\MongoRedis\src\MongoRedis\MongoRedis.xproj|D:\Projects\MongoRedis\src\MongoRedis.Settings\MongoRedis.Settings.xproj
+D:\Projects\MongoRedis\src\MongoRedis.Repository\MongoRedis.Repository.xproj|D:\Projects\MongoRedis\src\MongoRedis.Entities\MongoRedis.Entities.xproj
+D:\Projects\MongoRedis\src\MongoRedis.Repository\MongoRedis.Repository.xproj|D:\Projects\MongoRedis\src\MongoRedis.Settings\MongoRedis.Settings.xproj
+D:\Projects\MongoRedis\src\MongoRedis.Services\MongoRedis.Services.xproj|D:\Projects\MongoRedis\src\MongoRedis.Entities\MongoRedis.Entities.xproj
+D:\Projects\MongoRedis\src\MongoRedis.Services\MongoRedis.Services.xproj|D:\Projects\MongoRedis\src\MongoRedis.Repository\MongoRedis.Repository.xproj

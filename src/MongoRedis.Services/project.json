@@ -1,0 +1,17 @@
+{
+  "version": "1.0.0-*",
+
+  "dependencies": {
+    "MongoDB.Driver": "2.4.0",
+    "MongoRedis.Entities": "1.0.0-*",
+    "MongoRedis.Repository": "1.0.0-*",
+    "NETStandard.Library": "1.6.0",
+    "StackExchange.Redis": "1.1.608"
+  },
+
+  "frameworks": {
+    "netstandard1.6": {
+      "imports": "dnxcore50"
+    }
+  }
+}

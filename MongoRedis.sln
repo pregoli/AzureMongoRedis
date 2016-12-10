@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{09FE9EF7-EA26-4B2D-B688-7A53AA0F97BD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{292A6835-5E12-4940-905A-00D51D3136C3}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MongoRedis", "src\MongoRedis\MongoRedis.xproj", "{29A1D3A9-BE5D-4E6D-87F8-85278ABA8F4C}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MongoRedis.Services", "src\MongoRedis.Services\MongoRedis.Services.xproj", "{4262280C-7CCA-4C3D-BD1F-16F52C59BE5E}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MongoRedis.Repository", "src\MongoRedis.Repository\MongoRedis.Repository.xproj", "{5EA90569-8574-4D33-85C8-E626FD133E85}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MongoRedis.Entities", "src\MongoRedis.Entities\MongoRedis.Entities.xproj", "{B91EA7A5-8D7C-433B-9183-4980124BF168}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MongoRedis.Settings", "src\MongoRedis.Settings\MongoRedis.Settings.xproj", "{B4A7EF5B-1BBD-41BC-8B6A-E80DBA580446}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{29A1D3A9-BE5D-4E6D-87F8-85278ABA8F4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29A1D3A9-BE5D-4E6D-87F8-85278ABA8F4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29A1D3A9-BE5D-4E6D-87F8-85278ABA8F4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29A1D3A9-BE5D-4E6D-87F8-85278ABA8F4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4262280C-7CCA-4C3D-BD1F-16F52C59BE5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4262280C-7CCA-4C3D-BD1F-16F52C59BE5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4262280C-7CCA-4C3D-BD1F-16F52C59BE5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4262280C-7CCA-4C3D-BD1F-16F52C59BE5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EA90569-8574-4D33-85C8-E626FD133E85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EA90569-8574-4D33-85C8-E626FD133E85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EA90569-8574-4D33-85C8-E626FD133E85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EA90569-8574-4D33-85C8-E626FD133E85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B91EA7A5-8D7C-433B-9183-4980124BF168}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B91EA7A5-8D7C-433B-9183-4980124BF168}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B91EA7A5-8D7C-433B-9183-4980124BF168}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B91EA7A5-8D7C-433B-9183-4980124BF168}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4A7EF5B-1BBD-41BC-8B6A-E80DBA580446}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4A7EF5B-1BBD-41BC-8B6A-E80DBA580446}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4A7EF5B-1BBD-41BC-8B6A-E80DBA580446}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4A7EF5B-1BBD-41BC-8B6A-E80DBA580446}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{29A1D3A9-BE5D-4E6D-87F8-85278ABA8F4C} = {09FE9EF7-EA26-4B2D-B688-7A53AA0F97BD}
+		{4262280C-7CCA-4C3D-BD1F-16F52C59BE5E} = {09FE9EF7-EA26-4B2D-B688-7A53AA0F97BD}
+		{5EA90569-8574-4D33-85C8-E626FD133E85} = {09FE9EF7-EA26-4B2D-B688-7A53AA0F97BD}
+		{B91EA7A5-8D7C-433B-9183-4980124BF168} = {09FE9EF7-EA26-4B2D-B688-7A53AA0F97BD}
+		{B4A7EF5B-1BBD-41BC-8B6A-E80DBA580446} = {09FE9EF7-EA26-4B2D-B688-7A53AA0F97BD}
+	EndGlobalSection
+EndGlobal
