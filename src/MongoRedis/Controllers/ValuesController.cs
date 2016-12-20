@@ -1,13 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MongoDB.Bson;
 using MongoRedis.Entities;
 using MongoRedis.Services.People;
-using MongoRedis.Services.RemoteCache;
-using Newtonsoft.Json;
-using StackExchange.Redis;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace MongoRedis.Controllers
@@ -34,10 +28,8 @@ namespace MongoRedis.Controllers
         // GET api/values/5
         [HttpGet("{id}")]
         public async Task<Person> Get(string id)
-        {
-            var objectId = new ObjectId(id);
-
-            return await _peopleService.GetByIdAsync(objectId);
+        { 
+            return await _peopleService.GetByIdAsync(id);
         }
 
         // POST api/values

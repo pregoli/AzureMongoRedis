@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using MongoRedis.Settings;
-using MongoRedis.Services.People;
-using MongoRedis.Repository;
-using MongoRedis.Repository.People;
-using MongoRedis.Services.RemoteCache;
 
 namespace MongoRedis
 {
@@ -35,25 +26,7 @@ namespace MongoRedis
             // Add framework services.
             services.AddMvc();
 
-            // Add MongoDbConnection settings
-            services.Configure<MongoDbSettings>(options =>
-            {
-                options.ConnectionString = Configuration.GetSection("MongoConnection:ConnectionString").Value;
-                options.Database = Configuration.GetSection("MongoConnection:Database").Value;
-            });
-
-            // Add MongoDbConnection settings
-            services.Configure<RedisCacheSettings>(options =>
-            {
-                options.Configuration = Configuration.GetSection("RedisConnection:Configuration").Value;
-            });
-
-            //registering my repos
-            services.AddScoped<IPeopleRepository, PeopleRepository>();
-
-            //registering my services
-            services.AddScoped<IRemoteCacheService, RemoteCacheService>();
-            services.AddScoped<IPeopleService, PeopleService>();
+            IoC.Configuration.RegisterTypes(services, Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

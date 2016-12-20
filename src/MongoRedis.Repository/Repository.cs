@@ -2,10 +2,8 @@
 using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoRedis.Settings;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Linq;
 
 namespace MongoRedis.Repository
 {

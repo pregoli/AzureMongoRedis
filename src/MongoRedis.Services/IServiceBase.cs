@@ -1,9 +1,6 @@
-﻿using MongoDB.Bson;
-using MongoDB.Driver;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using MongoDB.Driver;
 
 namespace MongoRedis.Services
 {
@@ -11,7 +8,7 @@ namespace MongoRedis.Services
     {
         Task<IEnumerable<T>> GetAllAsync();
 
-        Task<T> GetByIdAsync(ObjectId id);
+        Task<T> GetByIdAsync(string id);
 
         Task<T> AddAsync(T entity);
 

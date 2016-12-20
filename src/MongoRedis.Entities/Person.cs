@@ -1,8 +1,10 @@
 ﻿using MongoRedis.Entities.Base;
 using System.Collections.Generic;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace MongoRedis.Entities
 {
+    [BsonIgnoreExtraElements]
     public class Person : Entity
     {
         public Person()

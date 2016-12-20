@@ -4,6 +4,7 @@ using MongoRedis.Entities.Base;
 
 namespace MongoRedis.Entities
 {
+    [BsonIgnoreExtraElements]
     public class Animal : Entity
     {
         public string Name { get; set; }

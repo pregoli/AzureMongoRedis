@@ -1,0 +1,9 @@
+D:\Repos\MongoRedisAzure\MongoRedis.Dispatcher\bin\Debug\MongoRedis.Dispatcher.exe.config
+D:\Repos\MongoRedisAzure\MongoRedis.Dispatcher\bin\Debug\MongoRedis.Dispatcher.exe
+D:\Repos\MongoRedisAzure\MongoRedis.Dispatcher\bin\Debug\MongoRedis.Dispatcher.pdb
+D:\Repos\MongoRedisAzure\MongoRedis.Dispatcher\bin\Debug\Microsoft.ServiceBus.dll
+D:\Repos\MongoRedisAzure\MongoRedis.Dispatcher\bin\Debug\System.Configuration.Abstractions.dll
+D:\Repos\MongoRedisAzure\MongoRedis.Dispatcher\bin\Debug\Microsoft.ServiceBus.xml
+D:\Repos\MongoRedisAzure\MongoRedis.Dispatcher\bin\Debug\System.Configuration.Abstractions.pdb
+D:\Repos\MongoRedisAzure\MongoRedis.Dispatcher\obj\Debug\MongoRedis.Dispatcher.exe
+D:\Repos\MongoRedisAzure\MongoRedis.Dispatcher\obj\Debug\MongoRedis.Dispatcher.pdb

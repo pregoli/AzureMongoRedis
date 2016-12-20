@@ -55,4 +55,5 @@
 -r:"C:\Users\paolo\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll"
 "D:\Projects\MongoRedis\src\MongoRedis.Settings\MongoDbSettings.cs"
 "D:\Projects\MongoRedis\src\MongoRedis.Settings\RedisCacheSettings.cs"
+"D:\Projects\MongoRedis\src\MongoRedis.Settings\RestBusSettings.cs"
 "D:\Projects\MongoRedis\src\MongoRedis.Settings\Properties\AssemblyInfo.cs"
