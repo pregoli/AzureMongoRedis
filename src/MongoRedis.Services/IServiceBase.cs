@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using MongoDB.Driver;
+using MongoDB.Bson;
 
 namespace MongoRedis.Services
 {
@@ -12,8 +12,8 @@ namespace MongoRedis.Services
 
         Task<T> AddAsync(T entity);
 
-        Task<T> UpdateAsync(FilterDefinition<T> filter, T entity);
+        Task<T> UpdateAsync(ObjectId id, T entity);
 
-        Task<bool> RemoveAsync(FilterDefinition<T> filter);
+        Task<bool> RemoveAsync(ObjectId id);
     }
 }

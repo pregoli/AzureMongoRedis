@@ -1,5 +1,4 @@
 ﻿using MongoDB.Bson;
-using MongoDB.Driver;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -13,8 +12,8 @@ namespace MongoRedis.Repository
 
         Task<T> AddAsync(T entity);
 
-        Task<T> UpdateAsync(FilterDefinition<T> filter, T entity);
+        Task<T> UpdateAsync(ObjectId id, T entity);
 
-        Task<bool> RemoveAsync(FilterDefinition<T> filter);
+        Task<bool> RemoveAsync(ObjectId id);
     }
 }

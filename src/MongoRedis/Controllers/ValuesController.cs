@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MongoRedis.Entities;
 using MongoRedis.Services.People;
-using System.Collections.Generic;
 using System.Threading.Tasks;
+using MongoDB.Bson;
 
 namespace MongoRedis.Controllers
 {
@@ -18,37 +18,52 @@ namespace MongoRedis.Controllers
         
         // GET api/values
         [HttpGet]
-        public async Task<IEnumerable<Person>> Get()
+        public async Task<IActionResult> Get()
         {
-            var result = await _peopleService.GetAllAsync();
-
-            return result;
+            return Ok(await _peopleService.GetAllAsync());
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public async Task<Person> Get(string id)
-        { 
-            return await _peopleService.GetByIdAsync(id);
+        public async Task<ActionResult> Get(string id)
+        {
+            ObjectId objectId;
+            if(ObjectId.TryParse(id, out objectId))
+                return Ok(await _peopleService.GetByIdAsync(id));
+
+            return BadRequest("Invalid objectid mate!");
         }
 
         // POST api/values
         [HttpPost]
-        public async Task Post(Person person)
+        public async Task<ActionResult> Post([FromBody]Person person)
         {
-            await _peopleService.AddAsync(person);
+            if(person != null)
+                return Ok(await _peopleService.AddAsync(person));
+
+            return BadRequest("Invalid person mate!");
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public async Task<ActionResult> Put(string id, Person person)
         {
+            ObjectId objectId;
+            if (ObjectId.TryParse(id, out objectId))
+                return Ok(await _peopleService.UpdateAsync(objectId, person));
+
+            return BadRequest("Invalid objectid mate!");
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<ActionResult> Delete(string id)
         {
+            ObjectId objectId;
+            if (ObjectId.TryParse(id, out objectId))
+                return Ok(await _peopleService.RemoveAsync(objectId));
+
+            return BadRequest("Invalid objectid mate!");
         }
     }
 }

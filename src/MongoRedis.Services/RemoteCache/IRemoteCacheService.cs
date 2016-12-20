@@ -12,6 +12,8 @@ namespace MongoRedis.Services.RemoteCache
 
         Task RemoveAsync(string key);
 
+        Task<string> DropAndCreateAsync(string key, string value);
+
         //void Clear();
     }
 }

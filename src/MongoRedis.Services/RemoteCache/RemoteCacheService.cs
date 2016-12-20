@@ -47,5 +47,13 @@ namespace MongoRedis.Services.RemoteCache
             var ts = TimeSpan.FromMinutes(10);
             await _cache.StringSetAsync(key, value, ts);
         }
+
+        public async Task<string> DropAndCreateAsync(string key, string value)
+        {
+            await this.RemoveAsync(key);
+            await this.SaveAsync(key, value);
+
+            return await this.GetAsync(key);
+        }
     }
 }

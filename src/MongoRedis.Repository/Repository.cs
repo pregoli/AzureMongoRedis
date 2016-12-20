@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MongoRedis.Repository
 {
-    public class Repository<T> : IRepository<T> where T : class
+    public class Repository<T> : IRepository<T> where T : Entities.Base.Entity
     {
         protected static IMongoClient _client;
         protected static IMongoDatabase _database;
@@ -40,14 +40,17 @@ namespace MongoRedis.Repository
             return await _collection.Find<T>(filter).FirstOrDefaultAsync();
         }
 
-        public async Task<bool> RemoveAsync(FilterDefinition<T> filter)
+        public async Task<bool> RemoveAsync(ObjectId id)
         {
+            var filter = Builders<T>.Filter.Eq("Id", id);
             var result = await _collection.DeleteOneAsync(filter);
             return result.DeletedCount > 0;
         }
 
-        public async Task<T> UpdateAsync(FilterDefinition<T> filter, T entity)
+        public async Task<T> UpdateAsync(ObjectId id, T entity)
         {
+            var filter = Builders<T>.Filter.Eq("Id", id);
+
             await _collection.ReplaceOneAsync(filter, entity,
             new UpdateOptions { IsUpsert = true });
 

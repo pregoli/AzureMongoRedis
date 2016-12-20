@@ -33,6 +33,9 @@ namespace MongoRedis.Services.People
 
             await _restBusService.SendMessageAsync(JsonConvert.SerializeObject(person));
 
+            //this should be done by sending a brokered message by bus to ms that ll do the job
+            await _remoteCacheService.DropAndCreateAsync("people", JsonConvert.SerializeObject(await _peopleRepository.GetAllAsync()));
+
             return person;
         }
         
@@ -56,7 +59,8 @@ namespace MongoRedis.Services.People
             var cachedData = await GetCachedData();
             var result = cachedData ?? await _peopleRepository.GetAllAsync();
 
-            if(cachedData == null)
+            //this should be done by sending a brokered message by bus to ms that ll do the job
+            if (cachedData == null)
                 await _remoteCacheService.SaveAsync("people", JsonConvert.SerializeObject(result));
 
             return result;
@@ -75,14 +79,24 @@ namespace MongoRedis.Services.People
             return result;
         }
 
-        public async Task<bool> RemoveAsync(FilterDefinition<Person> filter)
+        public async Task<bool> RemoveAsync(ObjectId id)
         {
-            return await _peopleRepository.RemoveAsync(filter);
+            var result = await _peopleRepository.RemoveAsync(id);
+
+            //this should be done by sending a brokered message by bus to ms that ll do the job
+            await _remoteCacheService.DropAndCreateAsync("people", JsonConvert.SerializeObject(await _peopleRepository.GetAllAsync()));
+
+            return result;
         }
 
-        public async Task<Person> UpdateAsync(FilterDefinition<Person> filter, Person entity)
+        public async Task<Person> UpdateAsync(ObjectId id, Person entity)
         {
-            return await _peopleRepository.UpdateAsync(filter, entity);
+            var result = await _peopleRepository.UpdateAsync(id, entity);
+
+            //this should be done by sending a brokered message by bus to ms that ll do the job
+            await _remoteCacheService.DropAndCreateAsync("people", JsonConvert.SerializeObject(await _peopleRepository.GetAllAsync()));
+
+            return result;
         }
     }
 }
